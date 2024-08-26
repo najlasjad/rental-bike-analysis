@@ -1,18 +1,10 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
 
-# Check if the file exists
-if not os.path.exists('all_data.csv'):
-    st.error("File 'all_data.csv' not found. Please ensure it is in the correct directory.")
-else:
-    df = pd.read_csv('all_data.csv')  
-    df['dteday'] = pd.to_datetime(df['dteday'])
-    # ... rest of your code ...
 
-# df = pd.read_csv('all_data.csv')  
-# df['dteday'] = pd.to_datetime(df['dteday'])
+df = pd.read_csv('all_data.csv')  
+df['dteday'] = pd.to_datetime(df['dteday'])
 
 data = {
     'dteday': df['dteday'],
